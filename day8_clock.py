@@ -8,13 +8,16 @@ import math
 def get_hms_leds(chour_led=0, cmin_led=0, csec_led=0):
     #function to get the LED indexes to light up on the ring based on the current time
 
-    #get te local time and add 1 because it is zero indexed
-    chour = time.localtime()[3] + 1
-    cmin = time.localtime()[4] + 1
-    csec = time.localtime()[5] + 1
+    #get te local time
+    #BECAUSE THIS IS BUILT TO RUN ON A RASPBERRY PI PICO, YOU WILL NEED TO SYNC THE 
+    #REAL TIME CLOCK ON THE PICO BEFORE RUNNING THE PROGRAM (This can be done via Thonny or 
+    #Visual Studio Code - MicroPico Device Controller Extension)
+    chour = time.localtime()[3]
+    cmin = time.localtime()[4]
+    csec = time.localtime()[5]
 
     #print the hours, mins, secs
-    print('    actual: ', chour, ' ', cmin, ' ', csec)
+    print('actual time: ', chour, ' ', cmin, ' ', csec)
 
     #calculate the hour LED
     if chour < 6:
@@ -54,7 +57,7 @@ def get_hms_leds(chour_led=0, cmin_led=0, csec_led=0):
     csec_led = math.floor(csec_led)
 
     #calculated LED to light up
-    print('calculated: ', chour_led, ' ', cmin_led, ' ', csec_led)
+    print(' calced LED: ', chour_led, ' ', cmin_led, ' ', csec_led)
 
     #return the new led numbers to the function call
     return chour_led, cmin_led, csec_led
