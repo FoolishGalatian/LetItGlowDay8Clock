@@ -4,3 +4,4 @@ It is code that uses a 12-LED addressable RGB Ring to make a rudiementary clock.
 
 BECAUSE THIS IS BUILT TO RUN ON A RASPBERRY PI PICO WITH NO BATTERY, YOU WILL NEED TO SYNC THE REAL TIME CLOCK ON THE PICO BEFORE RUNNING THE PROGRAM (This can be done via Thonny or Visual Studio Code - MicroPico Device Controller Extension)
 
+https://forums.raspberrypi.com/viewtopic.php?t=349334
